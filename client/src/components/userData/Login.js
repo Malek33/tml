@@ -41,7 +41,7 @@ function Login() {
   const handleSignIn = async () => {
     // e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:5000/auth/login', user, {
+      const response = await axios.post('https://frantic-slug-lab-coat.cyclic.app/auth/login', user, {
         headers: {
             'Content-Type': 'application/json'
         }});
