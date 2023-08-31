@@ -110,7 +110,7 @@ function Profile() {
 
   const fetchingUserData = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/auth/profile', {
+      const response = await axios.get('https://frantic-slug-lab-coat.cyclic.app/auth/profile', {
         headers: {
             'Authorization': `${window.localStorage.getItem('token')}`
         }});
