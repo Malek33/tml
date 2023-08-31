@@ -44,7 +44,7 @@ function Signup() {
   const handleSignUp = async () => {
     // e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:5000/auth/register', user, {
+      const response = await axios.post('https://frantic-slug-lab-coat.cyclic.app/auth/register', user, {
         headers: {
             'Content-Type': 'application/json'
         }});
