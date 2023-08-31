@@ -1,0 +1,162 @@
+.login-element-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items:start;
+    background-image: url(../../../img/background-imgs-spiderman/Spiderman-Wallpaper-74-3840x2400.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.under-login-element-container{
+    /* background-color: black; */
+    background: linear-gradient(60deg, black 55%, transparent);
+    height: 100vh;
+    /* width: 100vw; */
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.under-under-login-element-container{
+    /* background-color: antiquewhite; */
+    display: flex;
+    flex-direction: column;
+    width: 50vw;
+    /* text-align: start; */
+    justify-content: center;
+    align-items: center;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.name-sec{
+    display: flex;
+    gap: 10px;
+}
+
+.input-div{
+    position: relative;
+    height: 50px;
+    /* background-color: aqua; */
+}
+
+.input-div input{
+    padding: 1px 10px;
+    padding-right: 40px;
+    width: 350px;
+    height: 50px;
+    border-radius: 10px;
+    border: none;
+    font-size: large;
+    background-color: rgb(48, 48, 48);
+    color: white;
+}
+
+.input-div input:focus{
+    outline: 3px solid red;
+}
+
+.input-div .names{
+    width: 145px;
+}
+
+.input-div label{
+    position: absolute;
+    left: 10px;
+    cursor: text;
+    user-select: none;
+    /* bottom: 50%; */
+    /* z-index: 100; */
+}
+
+.input-div-label-down{
+    color: white;
+    top: 30%;
+    /* background-color: aquamarine; */
+    transition: 0.3s;
+    font-size: medium;
+}
+
+.input-div-label-up{
+    color: red;
+    transition: 0.3s;
+    top: 0;
+    font-size: small;
+}
+
+.signup-buttons-submit{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.signup-buttons-submit p{
+    margin: 0;
+    padding: 15px 30px;
+    padding-bottom: 17px;
+    border-radius: 99px;
+    cursor: pointer;
+}
+
+.signup-buttons-submit-1st-btn{
+    background-color: gray;
+    transition: 0.3s ease-in-out;
+}
+
+.signup-buttons-submit-1st-btn:hover{
+    box-shadow: 0px 5px 40px gray;
+}
+
+.signup-buttons-submit-2nd-btn{
+    background-color: red;
+    transition: 0.3s ease-in-out;
+}
+
+.signup-buttons-submit-2nd-btn:hover{
+    box-shadow: 0px 5px 40px red;
+}
+
+.login-titles-div{
+    margin-left: 60px;
+}
+
+@media screen and (max-width: 826px) {
+    .under-login-element-container{
+        background-color: black;
+        justify-content: center;
+        align-items: center;
+    }
+    .login-titles-div {
+        width: 100vw;
+    }
+}
+
+@media screen and (max-width: 520px) {
+    .login-titles-div {
+        scale: 0.9;
+        margin-left: 10px;
+    }
+}
+
+@media screen and (max-width: 424px) {
+    .under-under-login-element-container{
+        scale: 0.9;
+    }
+    .login-titles-div{
+        margin-left: -60px;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .under-under-login-element-container{
+        scale: 0.77;
+    }
+}

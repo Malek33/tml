@@ -1,0 +1,239 @@
+/* BIG CARDS */
+.movie-card-space-around-so-it-can-expand{
+    height: 280px;
+    display: flex;
+    align-items: center;
+}
+
+.movie-card-cover-image{
+    width: 400px;
+    height: 250px;
+    border-radius: 30px;
+    transition: 0.3s;
+    position: relative;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.movie-card-cover-image-shadow-effect{
+    width: 400px;
+    height: 250px;
+    background-color: black;
+    border-radius: 30px;
+    opacity: 0.4;
+    transition: 0.3s;
+}
+
+.movie-card-cover-image:hover .movie-card-cover-image-shadow-effect{
+    opacity: 0;
+}
+
+.movie-card-cover-image:hover{
+    scale: 1.08;
+}
+
+.movie-card-name-date-rating{
+    text-align: left;
+    position: absolute;
+    bottom: 0px;
+    left: 15px;
+}
+
+
+/* card data */
+.movie-card-movie-name{
+    margin: 0;
+    width: 350px;
+    font-size: larger;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    text-shadow: 0px 0px 10px black, 0px 0px 10px black, 0px 0px 10px black, 0px 0px 10px black, 0px 0px 10px black, 0px 0px 10px black, 0px 0px 10px black;
+}
+
+.movie-card-movie-release-date{
+    margin: 0;
+    margin-top: 3px;
+    font-size: medium;
+    text-shadow: 0px 0px 10px black, 0px 0px 10px black, 0px 0px 10px black, 0px 0px 10px black, 0px 0px 10px black, 0px 0px 10px black, 0px 0px 10px black;
+}
+
+.movie-card-movie-rating{
+    display: flex;
+    align-items: center;
+    text-shadow: 0px 0px 10px black, 0px 0px 10px black, 0px 0px 10px black, 0px 0px 10px black, 0px 0px 10px black, 0px 0px 10px black, 0px 0px 10px black;
+}
+
+.imdb-logo-card{
+    width: 50px;
+    height: 20px;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+/* card btns */
+.movie-card-btns{
+    position: absolute;
+    bottom: 15px;
+    right: 20px;
+    display: flex;
+    gap: 10px;
+    scale: 0.9;
+}
+
+.movie-card-btn-watch-now{
+    background-color: red;
+    border-radius: 99px;
+    padding: 10px;
+    opacity: 0.3;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.movie-card-btn-add{
+    background-color: gray;
+    border-radius: 100%;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    vertical-align: middle;
+    opacity: 0.3;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.movie-card-btn-watch-now:hover{
+    opacity: 1;
+}
+
+.movie-card-btn-add:hover{
+    opacity: 1;
+}
+
+/* SMALL CARDS */
+
+.movie-small-card-cover-image{
+    width: 180px;
+    height: 250px;
+    border-radius: 20px;
+    transition: 0.3s;
+    position: relative;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.movie-small-card-cover-image-shadow-effect{
+    width: 180px;
+    height: 250px;
+    background-color: black;
+    border-radius: 20px;
+    opacity: 0.4;
+    transition: 0.3s;
+}
+
+.movie-small-card-cover-image:hover .movie-small-card-cover-image-shadow-effect{
+    opacity: 0;
+}
+
+.movie-small-card-cover-image:hover{
+    scale: 1.08;
+}
+
+
+
+/* RATING */
+.movie-small-card-rating-star-icon-with-value-container{
+    background-color: black;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    vertical-align: middle;
+    gap: 2px;
+    border-radius: 99px;
+    height: 20px;
+    cursor: default;
+    padding: 2px 8px;
+}
+
+.movie-small-card-rating-star-icon{
+    color: gold;
+}
+
+.movie-small-card-rating-desc{
+    font-size: 12px;
+}
+
+/* card data */
+.movie-small-card-name-date-rating{
+    text-align: left;
+    position: absolute;
+    bottom: 60px;
+    left: 15px;
+}
+
+.movie-small-card-movie-name{
+    width: 150px;
+    font-size: medium;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    margin: 0;
+    text-shadow: 0px 0px 10px black, 0px 0px 10px black, 0px 0px 10px black, 0px 0px 10px black, 0px 0px 10px black, 0px 0px 10px black, 0px 0px 10px black;
+}
+
+.movie-small-card-movie-release-date{
+    margin: 0;
+    margin-top: 3px;
+    font-size: x-small;
+    text-shadow: 0px 0px 10px black, 0px 0px 10px black, 0px 0px 10px black, 0px 0px 10px black, 0px 0px 10px black, 0px 0px 10px black, 0px 0px 10px black;
+}
+
+/* card btns */
+.movie-small-card-btns{
+    width: 140px;
+    position: absolute;
+    bottom: 15px;
+    right: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.movie-small-card-btn-watch-now{
+    background-color: red;
+    border-radius: 99px;
+    padding: 10px;
+    font-size: small;
+    opacity: 0.3;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.movie-small-card-btn-add{
+    background-color: gray;
+    border-radius: 100%;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    vertical-align: middle;
+    opacity: 0.3;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.movie-small-card-btn-watch-now:hover{
+    opacity: 1;
+}
+
+.movie-small-card-btn-add:hover{
+    opacity: 1;
+}
+
+

@@ -1,0 +1,97 @@
+*{scroll-behavior: smooth;}
+
+::-moz-selection { /* Code for Firefox */
+  color: white;
+  background: red;
+}
+
+::selection {
+  color: white;
+  background: red;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Lato', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #0d0c0f;
+  /* color: white; */
+}
+
+.lkollflekoll{
+  transition: 0.3s;
+}
+
+.black-lkollflekoll{
+  background-color: #0d0c0f;
+}
+
+.white-lkollflekoll{
+  background-color: white;
+}
+
+input{
+  font-family: 'Lato', sans-serif;
+}
+
+code {
+  font-family: 'Lato', sans-serif;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 0px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #252525;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #414141;
+}
+
+.appHomeOfflinePage{
+  height: 90vh;
+  display: flex;
+  color: #414141;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.appHomeOfflinePage-minus-fifty{
+  width: calc(100vw - 55px);
+}
+
+.appHomeOfflinePage-minus-two-hundred{
+  width: calc(100vw - 205px);
+}
+
+
+
+.margin-left-two-hundred{
+  margin-left: 200px;
+}
+
+.margin-left-zero{
+  margin-left: 55px;
+}
+
+@media screen and (max-width: 480px) {
+  .margin-left-zero{
+    margin-left: 0px;
+  }
+  .margin-left-two-hundred{
+    margin-left: 0px;
+  }
+  .appHomeOfflinePage{
+    margin-top: 30px;
+    width: 100vw;
+  }
+}

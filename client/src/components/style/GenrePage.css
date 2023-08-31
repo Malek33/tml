@@ -1,0 +1,121 @@
+.fixing-top-of-website-hiding-genres-movies-by-nav-bar{
+    margin-top: 80px;
+}
+
+.genre-scroll-container{
+    width: 100%;
+    overflow-x: auto;
+    white-space: nowrap;
+    pointer-events: auto; /* Add this line */
+    /* background-color: aliceblue; */
+}
+
+.no-scroll {
+    overflow: hidden;
+}
+
+.genres-container{
+    color: white;
+    margin: 0;
+    padding: 0;
+    width: 81vw;
+    display: flex;
+    margin-left: 1vw;
+    padding-bottom: 1vh;
+    width: calc(100vw - 240px);
+}
+
+.aside-menu-hidden-genres-container{
+    color: white;
+    margin: 0;
+    padding: 0;
+    width: calc(100vw - 60px);
+    display: flex;
+  }
+
+  .aside-menu-genre-btn{
+    background-color: #252525;
+    color: white;
+    text-decoration: none;
+    border-radius: 99px;
+    scale: 0.9;
+    margin-right: 4px;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    white-space: nowrap;
+    transition: 0.3s;
+  }
+
+  .genre-scroll-container-for-skeleton-loading{
+    margin-top: 5px;
+    display: flex;
+    gap: 10px;
+  }
+
+  .aside-menu-genre-btn-skeleton-loader{
+    display: flex;
+    width: 100px;
+    border-radius: 99px;
+    height: 35px;
+    animation: skeleton-loading 1s linear infinite alternate ;
+  }
+
+  .aside-menu-genre-btn:hover{
+    background-color: #414141;
+  }
+
+  .aside-menu-genre-btn-active{
+    background-color: red;
+    color: white;
+    text-decoration: none;
+    border-radius: 99px;
+    scale: 0.9;
+    margin-right: 4px;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    white-space: nowrap;
+  }
+
+  .genre-scroll-container::-webkit-scrollbar {
+    height: 0px;
+  }
+
+  /* Handle */
+  /* .genre-scroll-container::-webkit-scrollbar-thumb {
+    background: #414141;
+    border-radius: 10px;
+  } */
+
+  /* Handle on hover */
+  /* .genre-scroll-container::-webkit-scrollbar-thumb:hover {
+    background: #414141;
+  } */
+
+  @media screen and (max-width: 480px) {
+    .aside-menu-hidden-genres-container{
+      width: 100vw;
+    }
+  }
+
+
+
+
+.MediaSearch-page-content-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: aliceblue; */
+}
+
+.MediaSearch-page-content{
+  /* background-color: aqua; */
+  justify-content: center;
+  /* width: calc(auto - 20px); */
+  gap: 10px;
+  display: flex;
+  flex-wrap: wrap;
+}

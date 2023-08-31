@@ -1,0 +1,263 @@
+/* bar menu container */
+.asideMenuContainer{
+    z-index: 110;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:start;
+    position: relative;
+    padding-top: 15px;
+    position: fixed;
+}
+
+.asideMenu {
+    margin-top: 10px;
+    height: calc(100vh - 47.8px);
+    background-color: black ;
+    display: flex;
+    justify-content: start;
+    z-index: 110;
+    overflow-x: scroll;
+}
+
+.fixingAsideMenu{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    margin-left: 12px;
+    width: 188px;
+    z-index: 110;
+}
+
+.asideMenu-expand{
+    width: 200px;
+    transition: 0.5s;
+    z-index: 110;
+}
+
+.asideMenu-collapse{
+    width: 50px;
+    transition: 0.5s;
+    z-index: 110;
+}
+
+#big-logo-site{
+    background-image: url("../../img/the box movies.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 120px;
+    height: 40px;
+    margin-top: 2px;
+}
+
+#small-logo-site{
+    display: none;
+}
+
+.menu-btn{
+    padding: 10px;
+    transition: 0.5s;
+    margin-left: 2.5px;
+}
+
+.menu-btn:hover{
+    color: red;
+}
+
+.menuIconLogoConfig{
+    display: flex;
+    gap: 5px;
+}
+
+.menuIconLogoConfigWidthFixing{
+    width: 200px;
+    transition: 0.3s;
+}
+
+/* menu bar elements */
+
+.asideBarSingleSectionButton{
+    display: flex;
+    color: #5e5e62;
+    text-decoration: none;
+}
+
+/* #help{
+    padding-bottom: 1000px;
+} */
+
+.fixing-not-finishing-scrolling-asideMenuBar{
+    height: 1px;
+    padding-bottom: 20px;
+    width: 1px;
+}
+
+.asideBarSingleSectionLogoOnly label{
+    display: none;
+}
+
+.asideBarSingleSectionLogoAndText label{
+    display: flex;
+    margin-top: -1px;
+    cursor: pointer;
+}
+
+.asideBarSingleSectionLogoOnly{
+    margin-bottom: 1px;
+    margin-left: -11px;
+    padding: 10px 12px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.asideBarSingleSectionLogoOnly:hover{
+    color: white;
+    background-color: #131313;
+}
+
+.asideBarSingleSectionLogoAndText{
+    display: flex;
+    gap: 10px;
+    justify-content: start;
+    align-items: center;
+    transition: 0.3s;
+    text-align: left;
+    width: 180px;
+    height: 40px;
+    padding: 2px 9px;
+    margin-left: -10px;
+    margin-bottom: 1px;
+    cursor: pointer;
+}
+
+.asideBarSingleSectionLogoAndText:hover{
+    color: white;
+    background-color: #131313;
+}
+
+/* active section */
+
+.activeSection .asideBarSingleSectionButtonImageHover{
+    color: red;
+}
+
+.activeSection label{
+    color: white;
+}
+
+.redBarInSectionForAsideMenu{
+    position: absolute;
+    right: 0px;
+    width: 5px;
+    height: 30px;
+    border-radius: 10px 0px 0px 10px;
+    background-color: red;
+}
+
+.hrAsideMenu{
+    border: #5e5e62 solid 1px;
+    margin: 15px 0;
+}
+
+.hrExpand{
+    /* margin-left: -1px; */
+    width: 180px;
+}
+
+.hrCollapse{
+    width: 30px;
+}
+
+@media screen and (max-width: 480px) {
+
+    .asideMenu-expand{
+        /* position: absolute; */
+        width: 100%;
+        transition: 0.5s;
+    }
+
+    .asideMenu-collapse{
+        width: 0px;
+        transition: 0.5s;
+    }
+
+    .asideMenuContainer{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        /* visibility: hidden; */
+        /* background-color: aliceblue; */
+    }
+
+    .asideMenu {
+        height: calc(100vh - 42px);
+        /* visibility: hidden; */
+        /* display: none; */
+        /* background-color: aliceblue; */
+    }
+
+    #small-logo-site{
+        display: none;
+    }
+
+    #big-logo-site{
+        margin-left: 50px;
+    }
+
+    .menu-btn{
+        position: absolute;
+
+    }
+
+    /* menu bar elements */
+
+    .fixingAsideMenu{
+        margin: 0;
+        width: 100vw;
+        align-items: center;
+    }
+
+    .mobile-tesssssstttttinng-fr-mobile{
+        width: 100%;
+    }
+
+    .fixing-mobile-alignment{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        transition: 0.3s;
+    }
+
+    .fixing-mobile-alignment:hover{
+        background-color:#131313;
+    }
+
+    .asideBarSingleSectionButton{
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .hrAsideMenu{
+        margin-left: 10px;
+        width: calc(100% - 20vw);
+    }
+
+    .asideBarSingleSectionButton:hover{
+        background-color: transparent;
+    }
+
+    .asideBarSingleSectionLogoOnly{
+        display: none;
+    }
+
+    .asideBarSingleSectionLogoAndText{
+        display: flex;
+    }
+
+  }

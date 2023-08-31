@@ -1,0 +1,110 @@
+.profile-user-banner{
+    height: 40vh;
+    margin-top: 45px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.profile-user-under-banner-section-container{
+    display: flex;
+    /* background-color: blue; */
+    gap: 5vw;
+}
+
+.profile-user-picture-image{
+    border-radius: 100%;
+    width:210px;
+    margin-bottom: 30px;
+}
+
+.profile-user-personal-details-container{
+    background-color: #0d0c0f;
+    border: 2px solid gray;
+    border-bottom: none;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    padding-top: 60px;
+    border-radius: 1000px 1000px 0px 0px;
+    margin-top: -20vh;
+    margin-left: 5vw;
+    overflow: hidden;
+}
+
+.profile-user-personal-details-location{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-user-personal-details-container-all-data{
+    word-wrap: normal;
+    /* background-color: aqua; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-user-personal-details-container-all-data label{
+    word-wrap:break-word;
+    width: 300px;
+    overflow: hidden;
+    text-align: center;
+}
+
+.fixing-------label-profile-user-personal-details-location{
+    text-align: start;
+}
+
+.profile-user-personal-details-container-analytics{
+    /* background-color: aquamarine; */
+    margin-top: 20px;
+    display: flex;
+    width: 300px;
+    justify-content: space-around;
+}
+
+.profile-user-personal-details-container-analytics div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-user-personal-details-container-btns{
+    display: flex;
+    margin-top: 50px;
+    width: 300px;
+    justify-content: space-around;
+}
+
+.profile-user-personal-details-container-btns label{
+    margin: 0;
+    padding: 10px 20px;
+    border-radius: 99px;
+    cursor: pointer;
+}
+
+
+.profile-user-personal-details-container-1st-btn{
+    background-color: gray;
+    transition: 0.3s ease-in-out;
+}
+
+.profile-user-personal-details-container-2nd-btn{
+    background-color: red;
+    transition: 0.3s ease-in-out;
+}
+
+.profile-user-slider-minus-200px-width{
+    width: calc(100vw - 5vw - 5vw - 300px - 300px);
+}
+
+.profile-user-slider-minus-50px-width{
+    width: calc(100vw - 5vw - 5vw - 300px - 200px);
+}

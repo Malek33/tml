@@ -1,0 +1,434 @@
+.movie-pagination-minus-200px-width{
+    width: calc(92vw - 200px);
+}
+
+.movie-pagination-minus-50px-width{
+    width: calc(90vw - 55px);
+}
+
+.Movies-groupper-big-container-50px{
+    width: calc(100vw - 60px);
+}
+.Movies-groupper-big-container-200px{
+    width: calc(100vw - 260px);
+}
+
+
+.movies-groupers-container {
+  width: calc(100vw - 60px);
+}
+
+.movies-groupers-container-200px{
+    width: calc(100vw - 210px);
+}
+
+.swiper {
+  /* background-color: beige; */
+  height: 280px;
+}
+
+.swiper-slide {
+  color: black;
+  text-align: center;
+  font-size: 18px;
+  /* background: #fff; */
+
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-swiper-button-next{
+    cursor: pointer;
+    padding: 5px;
+    height: 20px;
+    width: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: gray;
+    border-radius: 99px;
+    position: absolute;
+    top: 125px;
+    right: 1px;
+}
+
+.image-swiper-button-prev{
+    cursor: pointer;
+    padding: 5px;
+    height: 20px;
+    width: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: gray;
+    border-radius: 99px;
+    position: absolute;
+    top: 125px;
+    left: 1px;
+}
+
+.movie-groupper-genre-title-with-see-all-btn{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 10px;
+}
+
+.home-explore-big-titles{
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.home-explore-big-titles:hover{
+    color: red;
+}
+
+.movie-groupper-see-all-btn-with-icon{
+    color: gray;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.movie-groupper-see-all-btn-with-icon:hover{
+    color: white;
+}
+
+
+
+
+
+.fix-width-test{
+    width: calc(100vw - 55px);
+}
+
+/* big cards skeleton loader */
+.trending-section-big-card-skeleton-loader-container-200px{
+    display: flex;
+    gap: 10px;
+    /* background-color: yellow; */
+    margin-left: 10px;
+    width: calc(100vw - 220px);
+    justify-content: space-around;
+}
+
+.trending-section-big-card-skeleton-loader-container-50px{
+    display: flex;
+    gap: 10px;
+    justify-content: space-around;
+    /* background-color: yellow; */
+    width: calc(100vw - 75px);
+}
+
+.trending-section-skeleton-loader-title{
+    width: 300px;
+    height: 35px;
+    border-radius: 5px;
+    margin-left: 20px;
+    animation: skeleton-loading 1s linear infinite alternate ;
+}
+.trending-section-big-card-skeleton-loader{
+    position: relative;
+    width: 400px;
+    height: 250px;
+    /* background-color: aliceblue; */
+    border-radius: 10px;
+    animation: skeleton-loading 1s linear infinite alternate ;
+}
+
+.trending-section-big-card-skeleton-loader-elements-container{
+    display: flex;
+    position: absolute;
+    width: 100px;
+    left: 20px;
+    bottom: 20px;
+    flex-wrap: wrap;
+}
+.trending-section-big-card-skeleton-loader-left-section-container{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.trending-section-big-card-skeleton-loader-left-section-container-big-title{
+    width: 200px;
+    height: 25px;
+    border-radius: 5px;
+    animation: skeleton-loading-card-components 1s linear infinite alternate ;
+}
+.trending-section-big-card-skeleton-loader-left-section-container-data{
+    width: 150px;
+    height: 20px;
+    border-radius: 5px;
+    animation: skeleton-loading-card-components 1s linear infinite alternate ;
+}
+
+
+
+.trending-section-small-card-skeleton-loader{
+    position: relative;
+    width: 200px;
+    height: 250px;
+    /* background-color: aliceblue; */
+    border-radius: 10px;
+    animation: skeleton-loading 1s linear infinite alternate ;
+}
+
+.trending-section-small-card-skeleton-loader-elements-container{
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    width: 140px;
+    left: 0;
+    bottom: 20px;
+    flex-wrap: wrap;
+}
+.trending-section-small-card-skeleton-loader-left-section-container{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.trending-section-small-card-skeleton-loader-left-section-container-big-title{
+    width: 130px;
+    height: 25px;
+    border-radius: 5px;
+    animation: skeleton-loading-card-components 1s linear infinite alternate ;
+}
+.trending-section-small-card-skeleton-loader-left-section-container-data{
+    width: 100px;
+    height: 20px;
+    border-radius: 5px;
+    animation: skeleton-loading-card-components 1s linear infinite alternate ;
+}
+.moviesGroupper-movies-caraousel-mother-container{
+    position: relative;
+}
+
+
+
+@keyframes skeleton-loading-card-components {
+    0%{
+        background-color: rgb(83, 83, 83);
+    }
+    100%{
+        background-color: rgb(34, 34, 34);
+    }
+}
+
+@keyframes skeleton-loading {
+    0%{
+        background-color: rgb(34, 34, 34);
+        scale: 1.005;
+    }
+    100%{
+        background-color: rgb(22, 22, 22);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* <Swiper
+                        centerInsufficientSlides={true}
+                        centeredSlidesBounds={true}
+                        centeredSlides={true}
+                        slidesPerView={3}
+                        spaceBetween={30}
+                        slidesPerGroup={3}
+                        loop={true}
+                        autoplay={{
+                            delay: 2500,
+                            disableOnInteraction: false,
+                        }}
+                        loopFillGroupWithBlank={true}
+                        pagination={{
+                            clickable: true,
+                        }}
+                        navigation={{
+                            nextEl: ".trending-movies-next-arrow-for-swiper",
+                            prevEl: ".trending-movies-prev-arrow-for-swiper",
+                            disabledClass: "swiper-button-disabled"
+                        }}
+                        modules={[Pagination, Navigation]}
+                        breakpoints={{
+                            0: {
+                              slidesPerView: 1,
+                            },
+                            400:{
+                              slidesPerView:2,
+                            },
+                            639: {
+                              slidesPerView: 3,
+                            },
+                            865:{
+                              slidesPerView:3
+                            },
+                            1000:{
+                              slidesPerView:3
+                            },
+                            1500:{
+                              slidesPerView:3
+                            },
+                            1700:{
+                              slidesPerView:3
+                            }
+                          }}
+                        className="mySwiper"
+                    >
+                        {getTrendMovie.slice(0, 18).map( item => <SwiperSlide key={item.id}><MovieBigCard title={item.title || item.original_title || item.name} mediaType={props.mediaType} movieId={item.id} releaseDate={item.release_date || item.first_air_date} rating={item.vote_average} image={`https://image.tmdb.org/t/p/original${item.backdrop_path}`} /></SwiperSlide> )}
+                    </Swiper>
+
+
+
+
+
+
+
+
+.Movies-groupper-big-container{
+    width: 90vw;
+    color: white;
+    background-color: aliceblue;
+    margin-right: 2vw;
+    margin-left: 2vw;
+}
+
+.mySwiper{
+    background-color: antiquewhite;
+}
+
+.h1-movie-groupper{
+    margin: 0;
+    font-size: 1.3vw;
+    transition: 0.5s ease-in-out;
+    position: relative;
+}
+
+.movie-groupper-genre-title-with-see-all-btn{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-right: 1vw;
+    cursor: pointer;
+    margin-bottom: 2vh;
+    font-size: 1vw;
+    transition: 0.5s ease-in-out;
+}
+
+.movie-groupper-genre-title-with-see-all-btn:hover .h1-movie-groupper{
+    color: red;
+    transition: 0.5s ease-in-out;
+}
+
+
+.movie-groupper-see-all-btn-with-icon{
+    display: flex;
+    align-items: center;
+    color: #414141;
+    transition: 0.3s ease-in-out;
+}
+
+.movie-groupper-genre-title-with-see-all-btn:hover .movie-groupper-see-all-btn-with-icon {
+    color: white;
+}
+
+.moviesGroupper-movies-caraousel-container{
+    position: relative;
+    display: flex;
+}
+
+.image-swiper-button-next{
+    cursor: pointer;
+    position: absolute;
+    right: -1vw;
+    top: 13vh;
+    color: #414141;
+    transition: 0.3s ease-in-out;
+}
+
+.image-swiper-button-next:hover{
+    color: white;
+}
+
+.image-swiper-button-prev{
+    cursor: pointer;
+    position: absolute;
+    left: -3vw;
+    top: 13vh;
+    color: #414141;
+    transition: 0.3s ease-in-out;
+}
+
+.image-swiper-button-prev:hover{
+    color: white;
+}
+
+.swiper-pagination-bullet-active {
+    background-color: red !important;
+}
+
+.swiper-pagination-bullet{
+    background-color: white;
+    width: 0.4vw;
+    height: 0.4vw;
+}
+
+.swiper-pagination{
+    margin: 0;
+    padding: 0;
+    top: 27vh;
+}
+
+.home-explore-big-titles{
+    color: white;
+    text-decoration: none;
+} */
+
+@media screen and (max-width: 480px) {
+    .movie-details-minus-200px-width{
+        width: 100vw;
+    }
+    .movie-details-minus-50px-width{
+        width: 100vw
+    }
+    .movies-groupers-container{
+        width: 100vw;
+    }
+    .swiper{
+        width: 100vw;
+    }
+    .swiper-slide{
+        scale: 0.9;
+    }
+    .image-swiper-button-next{
+        display: none;
+    }
+    .image-swiper-button-prev{
+        display: none;
+    }
+  }
+
+  @media screen and (max-width: 370px) {
+    .swiper-slide{
+        scale: 0.7;
+        margin-top: -50px;
+    }
+    #trending{
+        margin-top: 0px;
+    }
+    .movies-groupers-container{
+        margin-top: -120px;
+    }
+  }
