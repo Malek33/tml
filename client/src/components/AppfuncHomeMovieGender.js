@@ -14,7 +14,7 @@ const AppfuncHomeMovieGender = () => {
   })
 
   const { id } = useParams()
-  console.log(id);
+  // console.log(id);
 
   const [searchApiLoaded, setSearchApiLoaded] = useState(true);
   const [searchResults, setSearchResults] = useState({});

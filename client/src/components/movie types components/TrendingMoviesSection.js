@@ -185,7 +185,7 @@ function TrendingMoviesSection(props) {
             spaceBetween={3}
             modules={[Pagination, Navigation]}
             autoplay={{
-              delay: 2000,
+              delay: 30000,
               disableOnInteraction: false,
             }}
             breakpoints={hideAsideMenu === 'hide' ? swiperBreakpoints : swiperBreakpointsMinus200}
@@ -207,6 +207,8 @@ function TrendingMoviesSection(props) {
                   releaseDate={item.release_date || item.first_air_date}
                   rating={item.vote_average}
                   image={`https://image.tmdb.org/t/p/w780/${item.backdrop_path}`}
+                  userId={props.userId}
+                  userBookmarkedMovies={props.userBookmarkedMovies}
                 />
               </SwiperSlide>
             ))}

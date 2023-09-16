@@ -7,7 +7,7 @@ function Upcoming() {
     window.dispatchEvent(new Event("storageChangesAsideMenuSection"));
 
     return (
-        <div>
+        <div style={{marginTop: '80px'}}>
             <h1>upcoming</h1>
         </div>
     )

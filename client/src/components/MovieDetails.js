@@ -57,6 +57,12 @@ function MovieDetails() {
   const [tvEpisodes, setTvEpisodes] = useState([]);
   const [tvEpisode, setTvEpisode] = useState([]);
 
+  const [movieIsLiked, setMovieIsLiked] = useState(false);
+  // const [likedMoviesArray, setLikedMoviesArray] = useState([]);
+
+
+  const [user, setUser] = useState({});
+
   const [dataLoading, setDataLoading] = useState(true);
 
   const toggleMediaTraillerPopup = () => {
@@ -76,6 +82,45 @@ function MovieDetails() {
     mediaType === "movie"
       ? `https://autoembed.to/trailer/movie/${id}`
       : `https://autoembed.to/trailer/tv/${id}`;
+
+  const handleFavoriteButton = async () => {
+
+    const data = {
+      userId: user._id,
+      movie: {
+        movieTitle: movieData.original_title || movieData.title,
+        posterPath: movieData.poster_path,
+        movieId: movieData.id,
+      }
+    }
+
+    console.log(movieIsLiked);
+    const test = true
+
+    if(movieIsLiked){
+      setMovieIsLiked(false)
+      try {
+        const response = await axios.delete(`http://localhost:5000/auth//${data.userId}/movie-liked/${data.movie.movieId}`, {
+          headers: {
+              'Content-Type': 'application/json',
+          }});
+        console.log(response.data); // Handle success
+      } catch (error) {
+        console.error(error); // Handle error
+      }
+    }else{
+      setMovieIsLiked(true)
+      try {
+        const response = await axios.post('http://localhost:5000/auth/liked-movie', data, {
+          headers: {
+              'Content-Type': 'application/json'
+          }});
+        console.log(response.data); // Handle success
+      } catch (error) {
+        console.error(error); // Handle error
+      }
+    };
+    }
 
 
   useEffect(() => {
@@ -119,14 +164,16 @@ function MovieDetails() {
 
   const fetchingUserId = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/auth/profile', {
+      const response = await axios.get('https://frantic-slug-lab-coat.cyclic.app/auth/profile', {
         headers: {
             'Authorization': `${window.localStorage.getItem('token')}`
         }});
+        setUser(response.data.user)
+        setMovieIsLiked(!response.data.user.likedMovies.some(movie => movie.movieId == movieData.id));
+        // console.log('profile liked:', response.data.user.likedMovies.some(movie => movie.movieId == movieData.id));
+        // setLikedMoviesArray(response.data.user.likedMovies)
         console.log(response.data.user); // Handle success
         return response.data.user._id;
-        // localStorage.setItem('token', response.data.token);
-
     } catch (error) {
       console.error(error); // Handle error
     }
@@ -143,7 +190,7 @@ function MovieDetails() {
         }
       }
       console.log(movie.userId);
-      const response = await axios.post('http://localhost:5000/auth/recent-movie', movie, {
+      const response = await axios.post('https://frantic-slug-lab-coat.cyclic.app/auth/recent-movie', movie, {
         headers: {
             'Content-Type': 'application/json'
         }
@@ -431,7 +478,7 @@ function MovieDetails() {
                     <label className="movie-details-btn-watch-watch-label">WATCH</label>
                   </a>
                   <div className="snd-movie-details-btns">
-                      <div className="movie-details-favorite-btn"><FavoriteBorder /></div>
+                      <div className="movie-details-favorite-btn" style={movieIsLiked ? {color: 'red'} : {}} onClick={handleFavoriteButton}><FavoriteBorder /></div>
                       <div className="movie-details-share-btn"><ShareIcon /></div>
                       <div className="movie-details-options-btn"><LinearScaleIcon /></div>
                   </div>

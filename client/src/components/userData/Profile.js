@@ -15,78 +15,9 @@ import { Pagination, Navigation } from "swiper";
 import SwiperCore, { Autoplay } from "swiper";
 import MovieSmallCard from "../MovieSmallCard";
 
-
-
-
-const swiperBreakpoints = {
-  0: {
-    slidesPerView: 2,
-  },
-  400: {
-    slidesPerView: 2,
-  },
-  639: {
-    slidesPerView: 3,
-  },
-  865: {
-    slidesPerView: 4,
-  },
-  1000: {
-    slidesPerView: 5,
-  },
-  1500: {
-    slidesPerView: 7,
-  },
-  1700: {
-    slidesPerView: 6,
-  },
-  2000: {
-    slidesPerView: 5,
-  },
-  2500: {
-    slidesPerView: 6,
-  },
-  3000: {
-    slidesPerView: 7,
-  },
-};
-
-// alert('hash:', window.location.hash)
-
-const swiperBreakpointsMinus200 = {
-  0: {
-    slidesPerView: 1,
-  },
-  400: {
-    slidesPerView: 1,
-  },
-  639: {
-    slidesPerView: 2,
-  },
-  865: {
-    slidesPerView: 3,
-  },
-  1000: {
-    slidesPerView: 4,
-  },
-  1500: {
-    slidesPerView: 6,
-  },
-  1700: {
-    slidesPerView: 7,
-  },
-  2000: {
-    slidesPerView: 4,
-  },
-  2500: {
-    slidesPerView: 5,
-  },
-  3000: {
-    slidesPerView: 6,
-  },
-};
-
-
+// import React from 'react';
+import Popup from 'reactjs-popup';
+import 'reactjs-popup/dist/index.css';
 
 
 function Profile() {
@@ -131,6 +62,59 @@ function Profile() {
     fetchingUserData()
   }, [])
 
+  const swiperBreakpoints = {
+    0: {
+      slidesPerView: 2,
+    },
+    400: {
+      slidesPerView: 2,
+    },
+    639: {
+      slidesPerView: 3,
+    },
+    850: {
+      slidesPerView: 4,
+    },
+    901: {
+      slidesPerView: 2,
+    },
+    1060: {
+      slidesPerView: 3,
+    },
+    1300: {
+      slidesPerView: 4,
+    },
+    1500: {
+      slidesPerView: 5,
+    },
+    1700: {
+      slidesPerView: 6,
+    },
+    2000: {
+      slidesPerView: 7,
+    },
+    2500: {
+      slidesPerView: 7,
+    },
+    3000: {
+      slidesPerView: 7,
+    },
+  };
+
+  const handleChangeAccountProfileData = () => {
+    <Popup trigger={<button>Trigger</button>} position="top left">
+    {close => (
+      <div>
+        Content here
+        <a href className="close" onClick={close}>
+          &times;
+        </a>
+      </div>
+    )}
+  </Popup>
+
+  }
+
   return (
     <>
       {userIsLogged ? (
@@ -139,6 +123,7 @@ function Profile() {
             <div>
               <div className={`profile-user-banner ${ hideAsideMenu === "show" ? "movie-details-minus-200px-width" : "movie-details-minus-50px-width"} `} style={{ backgroundImage: `url(${userDetails.profileBackdrop})` }}> </div>
             </div>
+
             <div className="profile-user-under-banner-section-container">
               <div className="profile-user-personal-details-mother-container">
                 <div className="profile-user-personal-details-container">
@@ -167,7 +152,54 @@ function Profile() {
                     </div>
                   </div>
                   <div className="profile-user-personal-details-container-btns">
-                    <label className="profile-user-personal-details-container-1st-btn">Edit Profile</label>
+                  <Popup
+    trigger={<label className="profile-user-personal-details-container-1st-btn">
+    Edit Profile</label>}
+    modal
+    nested
+  >
+    {close => (
+      <div className="modal">
+        <button className="close" onClick={close}>
+          &times;
+        </button>
+        <div className="header"> Modal Title </div>
+        <div className="content">
+          {' '}
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, a nostrum.
+          Dolorem, repellat quidem ut, minima sint vel eveniet quibusdam voluptates
+          delectus doloremque, explicabo tempore dicta adipisci fugit amet dignissimos?
+          <br />
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur sit
+          commodi beatae optio voluptatum sed eius cumque, delectus saepe repudiandae
+          explicabo nemo nam libero ad, doloribus, voluptas rem alias. Vitae?
+        </div>
+        <div className="actions">
+          <Popup
+            trigger={<button className="button"> Trigger </button>}
+            position="top center"
+            nested
+          >
+            <span>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae
+              magni omnis delectus nemo, maxime molestiae dolorem numquam
+              mollitia, voluptate ea, accusamus excepturi deleniti ratione
+              sapiente! Laudantium, aperiam doloribus. Odit, aut.
+            </span>
+          </Popup>
+          <button
+            className="button"
+            onClick={() => {
+              console.log('modal closed ');
+              close();
+            }}
+          >
+            close modal
+          </button>
+        </div>
+      </div>
+    )}
+  </Popup>
                     <label className="profile-user-personal-details-container-2nd-btn">Add Friends</label>
                   </div>
                 </div>
@@ -175,11 +207,11 @@ function Profile() {
               <div>
 
                 <div>
-                  <h1>Recently watched</h1>
+                  <h1>Recently watched :</h1>
                   <Swiper
                     className={`mySwiper ${ hideAsideMenu === "show" ? 'profile-user-slider-minus-200px-width' : 'profile-user-slider-minus-50px-width'}`}
                     loop={true}
-                    slidesPerView={4}
+                    // slidesPerView={4}
                     spaceBetween={3}
                     modules={[Pagination, Navigation]}
                     autoplay={{
@@ -198,7 +230,7 @@ function Profile() {
                 </div>
 
                 <div>
-                  <h1>Recently watched</h1>
+                  <h1>Favorite Movies :</h1>
                   <Swiper
                     className={`mySwiper ${ hideAsideMenu === "show" ? 'profile-user-slider-minus-200px-width' : 'profile-user-slider-minus-50px-width'}`}
                     loop={true}
@@ -216,12 +248,12 @@ function Profile() {
                       disabledClass: "swiper-button-disabled",
                     }}
                     >
-                    {recentMovies.map( item => <SwiperSlide key={item.movieId}><MovieSmallCard title={item.movieTitle} movieId={item.id} image={`https://image.tmdb.org/t/p/w185${item.posterPath}`} /></SwiperSlide> )}
+                    {likedMovies.map( item => <SwiperSlide key={item.movieId}><MovieSmallCard title={item.movieTitle} movieId={item.id} image={`https://image.tmdb.org/t/p/w185${item.posterPath}`} /></SwiperSlide> )}
                 </Swiper>
                 </div>
 
                 <div>
-                  <h1>Recently watched</h1>
+                  <h1>Bookmarked Movies :</h1>
                   <Swiper
                     className={`mySwiper ${ hideAsideMenu === "show" ? 'profile-user-slider-minus-200px-width' : 'profile-user-slider-minus-50px-width'}`}
                     loop={true}
@@ -239,7 +271,7 @@ function Profile() {
                       disabledClass: "swiper-button-disabled",
                     }}
                     >
-                    {recentMovies.map( item => <SwiperSlide key={item.movieId}><MovieSmallCard title={item.movieTitle} movieId={item.id} image={`https://image.tmdb.org/t/p/w185${item.posterPath}`} /></SwiperSlide> )}
+                    {bookmarkedMovies.map( item => <SwiperSlide key={item.movieId}><MovieSmallCard title={item.movieTitle} movieId={item.id} image={`https://image.tmdb.org/t/p/w185${item.posterPath}`} /></SwiperSlide> )}
                 </Swiper>
                 </div>
 

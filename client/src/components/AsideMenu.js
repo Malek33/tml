@@ -54,6 +54,9 @@ function AsideMenu(props) {
     window.localStorage.setItem("AsideMenuVisibility", hideAsideMenu)
     window.dispatchEvent(new Event("storage"));
 
+    const[ token, setToken ] = useState(window.localStorage.getItem("token"))
+    // setToken(window.localStorage.getItem("asideMenuSection"))
+
     const[ asideMenuSection, setAsideMenuSection ] = useState(window.localStorage.getItem("asideMenuSection") || "home")
     window.addEventListener('storageChangesAsideMenuSection', () => {
         setAsideMenuSection(window.localStorage.getItem("asideMenuSection"))
@@ -112,21 +115,21 @@ useEffect(() => {
         title: "Recent",
         DefIcon: <AccessTimeIcon className='asideBarSingleSectionButtonImageHover'/>,
         OutIcon: <AccessTimeOutlined/>,
-        path: "/recent",
+        path: token ? "/recent" : "/login",
         localStorageName: "recent"
     },
     {
         title: "Favorites",
         DefIcon: <FavoriteBorder className='asideBarSingleSectionButtonImageHover'/>,
         OutIcon: <FavoriteBorderOutlinedIcon/>,
-        path: "/favorites",
+        path: token ? "/favorites" : "/login",
         localStorageName: "favorites"
     },
     {
         title: "Bookmarked",
         DefIcon: <BookmarkBorderIcon className='asideBarSingleSectionButtonImageHover'/>,
         OutIcon: <BookmarkBorderOutlined/>,
-        path: "/bookmarked",
+        path: token ? "/bookmarked" : "/login",
         localStorageName: "bookmarked"
     },
     {

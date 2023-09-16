@@ -158,7 +158,7 @@ function LatestMovies(props) {
                               disabledClass: "swiper-button-disabled",
                             }}
                             >
-                            {getPopularMovies.slice(0, 18).map( item => <SwiperSlide key={item.id}><MovieSmallCard title={item.title || item.original_title || item.name} mediaType={props.mediaType} movieId={item.id} releaseDate={item.release_date || item.first_air_date} rating={item.vote_average} image={`https://image.tmdb.org/t/p/w185/${item.poster_path}`} /></SwiperSlide> )}
+                            {getPopularMovies.slice(0, 18).map( item => <SwiperSlide key={item.id}><MovieSmallCard userId={props.userId} userBookmarkedMovies={props.userBookmarkedMovies} title={item.title || item.original_title || item.name} mediaType={props.mediaType} movieId={item.id} releaseDate={item.release_date || item.first_air_date} rating={item.vote_average} image={`https://image.tmdb.org/t/p/w185/${item.poster_path}`} /></SwiperSlide> )}
                         </Swiper>
                     </div>
                 </div>

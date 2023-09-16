@@ -159,7 +159,7 @@ function TopRatedMoviesSection(props) {
                               disabledClass: "swiper-button-disabled",
                             }}
                             >
-                            {getTopRatedMovies.slice(0, 18).map( item => <SwiperSlide key={item.id}><MovieSmallCard title={item.title || item.original_title || item.name} mediaType={props.mediaType} movieId={item.id} releaseDate={item.release_date || item.first_air_date} rating={item.vote_average} image={`https://image.tmdb.org/t/p/w185/${item.poster_path}`} /></SwiperSlide> )}
+                            {getTopRatedMovies.slice(0, 18).map( item => <SwiperSlide key={item.id}><MovieSmallCard title={item.title || item.original_title || item.name} userId={props.userId} userBookmarkedMovies={props.userBookmarkedMovies} mediaType={props.mediaType} movieId={item.id} releaseDate={item.release_date || item.first_air_date} rating={item.vote_average} image={`https://image.tmdb.org/t/p/w185/${item.poster_path}`} /></SwiperSlide> )}
                         </Swiper>
                     </div>
 {/*

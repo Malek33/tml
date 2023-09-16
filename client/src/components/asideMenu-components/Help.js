@@ -7,7 +7,7 @@ function Help() {
     window.dispatchEvent(new Event("storageChangesAsideMenuSection"));
 
     return (
-        <div>
+        <div style={{marginTop: '80px'}}>
             <h1>Help</h1>
         </div>
     )
