@@ -94,12 +94,8 @@ router.post('/liked-movie', async (req, res) => {
     const { userId, movie } = req.body;
 
     const existingUser = await User.findOne({ _id: userId });
-
-    if (existingUser.likedMovies.some(recentMovie => recentMovie.movieId === movie.movieId)) {
-      // Remove the movie from the recentMovies array
-      await User.findByIdAndUpdate(userId, { $pull: { likedMovies: { movieId: movie.movieId } } });
-
-      return res.json({ message: 'Movie removed from recent movies and added to liked movies' });
+    if (existingUser.likedMovies.some(likedMovies => likedMovies.movieId == movie.movieId)) {
+      return res.status(400).json({ message: 'Movie already liked' });
     }
 
     // Update the user's likedMovies array with the new liked movie
@@ -111,7 +107,7 @@ router.post('/liked-movie', async (req, res) => {
   }
 });
 
-router.delete('/:userId/movie-liked/:movieId', requireAuth, async (req, res) => {
+router.delete('/:userId/movie-liked/:movieId', async (req, res) => {
   try {
     const userId = req.params.userId;
     const movieId = req.params.movieId;
@@ -136,26 +132,24 @@ router.post('/bookmarked-movie', async (req, res) => {
 
     const existingUser = await User.findOne({ _id: userId });
 
-    if (existingUser.bookmarkedMovies.some(bookmarkedMovies => bookmarkedMovies.movieId === movie.movieId)) {
-      // Remove the movie from the recentMovies array
-      await User.findByIdAndUpdate(userId, { $pull: { bookmarkedMovies: { movieId: movie.movieId } } });
-
-      return res.json({ message: 'Movie removed from recent movies and added to liked movies' });
+    if (existingUser.bookmarkedMovies.some(bookmarkedMovie => bookmarkedMovie.movieId == movie.movieId)) {
+      return res.status(400).json({ message: 'Movie already bookmarked' });
     }
 
     // Update the user's likedMovies array with the new liked movie
     await User.findByIdAndUpdate(userId, { $push: { bookmarkedMovies: movie } });
 
-    res.json({ message: 'Movie added to liked movies' });
+    res.json({ message: 'Movie added to bookmarked movies' });
   } catch (error) {
-    res.status(500).json({ message: 'Error adding movie to liked movies', error: error.message });
+    res.status(500).json({ message: 'Error adding movie to bookmarked movies', error: error.message });
   }
 });
 
-router.delete('/:userId/movie-bookmarked/:movieId', requireAuth, async (req, res) => {
+router.delete('/:userId/bookmarked-movie/:movieId', async (req, res) => {
   try {
     const userId = req.params.userId;
     const movieId = req.params.movieId;
+    // console.log(userId, movieId);
 
     const user = await User.findById(userId);
     if (!user) {
@@ -165,9 +159,9 @@ router.delete('/:userId/movie-bookmarked/:movieId', requireAuth, async (req, res
     // Remove the movie from the user's likedMovies array
     user.bookmarkedMovies = user.bookmarkedMovies.filter(movie => movie.movieId !== movieId);
     await user.save();
-    res.json({ message: 'Movie removed from liked movies' });
+    res.json({ message: 'Movie removed from bookmarked movies' });
   } catch (error) {
-    res.status(500).json({ message: 'Error removing movie from liked movies', error: error.message });
+    res.status(500).json({ message: 'Error removing movie from bookmarked movies', error: error.message });
   }
 });
 
